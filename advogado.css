@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;700&family=Merriweather:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+:ital@0;1&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Niconne&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== MENU ===== */
+#menu ul {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 10px 40px;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+#menu ul li a {
+    font-size: 18px;
+    font-family: 'Merriweather', serif;
+    color: #084494;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+#menu ul li a:hover {
+    color: #006eff;
+}
+#menu .logo img {
+    height: 40px;
+}
+
+/* ===== BOTÕES ===== */
+.animated-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #084494;
+  box-shadow: 0 0 0 2px #084494;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.animated-button span:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.animated-button span:first-child {
+  position: relative;
+  z-index: 1;
+}
+.animated-button:hover {
+  box-shadow: 0 0 0 5px #2195f360;
+  color: #ffffff;
+}
+.animated-button:hover span:last-child {
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+}
+.animated-button:active {
+  scale: 0.95;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+main.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 120px 40px 40px; /* espaço para menu */
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* ===== CARDS ===== */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.card h2 {
+    font-family: 'Merriweather', cursive;
+    font-size: 1.8rem;
+    color: #084494;
+    margin-bottom: 15px;
+}
+.card p, .card li, .card button {
+    font-size: 1rem;
+    color: #032b5c;
+    margin-bottom: 10px;
+}
+.card button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 7px;
+    background-color: #084494;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.card button:hover {
+    background-color: #006eff;
+}
+
+/* ===== LISTAS ===== */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+ul li {
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* ===== INPUT FILE ===== */
+input[type="file"] {
+    margin-bottom: 15px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1000px) {
+    main.container {
+        padding: 140px 20px 20px;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    #menu ul {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+    .card {
+        padding: 20px;
+    }
+}
+/* ===== Transição de Páginas ===== */
+.fade-transition {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body.loaded {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}

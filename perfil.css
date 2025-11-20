@@ -1,0 +1,330 @@
+/* === FONTES === */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:ital,wght@0,400;0,700;1,300&display=swap');
+
+/* ===== Menu ===== */
+#menu ul {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 10px 40px;
+    width: 100%;
+    box-sizing: border-box;
+     position: fixed;
+       z-index: 9999;
+        padding: 5px 40px; 
+        overflow: HI;
+}
+#menu ul li a {
+    font-size: x-large;
+    font-family: 'Playfair Display', serif;
+    color: #084494;
+    text-decoration: none;
+}
+#menu ul li a:hover {
+    color: #006eff;
+}
+#menu {
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 12px;
+    margin-bottom: 30px;
+     margin-bottom: 0; 
+    position: fixed; 
+    top: 0;         
+    left: 0;        
+    z-index: 9999;  
+}
+#menu ul li a span {
+    font-size: 20px;
+    color: #032b5c;
+}
+
+#menu .logo img {
+    height: 500px;
+    width: auto;
+}
+:root {
+  --primary: #084494;
+  --primary-2: #006eff;
+  --accent: #00bcd4;
+  --bg: #ffffff;
+  --error: #e63946;
+  --success: #084494;
+  --muted: #6b7280;
+  --radius: 12px;
+}
+
+/* BOTAO ADMINISTRADOR*/ 
+.animated-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #084494;
+  box-shadow: 0 0 0 2px #084494;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.animated-button span:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.animated-button span:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 5px #2195f360;
+  color: #ffffff;
+}
+
+.animated-button:active {
+  scale: 0.95;
+}
+
+.animated-button:hover span:last-child {
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+}
+
+
+  
+
+/* RESET GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(180deg, #fbfdff, #ffffff);
+  font-family: 'Merriweather', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 30px;
+}
+
+/* CARD DE EDIÇÃO */
+.admin-container {
+  background: #fff;
+  border: 2px solid rgba(8, 68, 148, 0.1);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 12px 24px rgba(8, 68, 148, 0.15);
+  animation: floatUp 0.8s ease forwards;
+}
+
+/* ANIMAÇÃO DE ENTRADA */
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TÍTULO */
+h1 {
+  font-family: 'Lobster', cursive;
+  color: var(--primary);
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* FORMULÁRIO */
+.form-perfil {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 15px;
+}
+
+input {
+  padding: 12px 16px;
+  border: 2px solid rgba(8, 68, 148, 0.2);
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  font-family: 'Merriweather', serif;
+  background: #fdfdfd;
+}
+
+/* === ESTADO DE FOCO === */
+input:focus {
+  outline: none;
+  border-color: var(--primary-2);
+  box-shadow: 0 0 12px rgba(8, 68, 148, 0.2);
+  transform: scale(1.02);
+}
+
+/* === VALIDAÇÃO VISUAL === */
+input:valid {
+  border-color: var(--success);
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+input:invalid:focus {
+  border-color: var(--error);
+  box-shadow: 0 0 10px rgba(230, 57, 70, 0.3);
+}
+
+/* === BOTÃO DE SALVAR === */
+.btn-salvar {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-2) 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 6px 20px rgba(8, 68, 148, 0.3);
+  transition: all 0.3s ease;
+  align-self: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* EFEITO BRILHO AO HOVER */
+.btn-salvar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75px;
+  width: 50px;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+.btn-salvar:hover::before {
+  left: 120%;
+}
+.btn-salvar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(8, 68, 148, 0.45);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+  .admin-container {
+    padding: 25px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  input {
+    font-size: 14px;
+  }
+  .btn-salvar {
+    width: 100%;
+  }
+}
+/* === Loader e checkmark para feedback === */
+.loader {
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.8s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.checkmark {
+  font-size: 20px;
+  text-align: center;
+  animation: fadeInCheck 0.4s ease forwards;
+}
+
+@keyframes fadeInCheck {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* === Loader e checkmark === */
+.loader {
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.8s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.checkmark {
+  font-size: 20px;
+  text-align: center;
+  animation: fadeInCheck 0.4s ease forwards;
+}
+
+@keyframes fadeInCheck {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* ===== Transição de Páginas ===== */
+.fade-transition {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body.loaded {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}

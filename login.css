@@ -1,0 +1,108 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body, html {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Lado esquerdo - formulário */
+.form-container {
+  flex: 1;
+  padding: 60px;
+  background: #fff;
+}
+
+.form-container h1 {
+  color: #0a195f;
+  margin-bottom: 30px;
+}
+
+/* Abas */
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  font-size: 16px;
+  margin-right: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  color: #0a195f;
+  transition: 0.3s ease;
+}
+
+.tab.active {
+  border-bottom: 2px solid #0a195f;
+  font-weight: bold;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px 0 5px;
+  color: #0a195f;
+  font-weight: 600;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.login-btn {
+  padding: 12px;
+  background-color: #0a195f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Extras */
+.extras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.register {
+  font-size: 14px;
+  color: #666;
+}
+
+.register a {
+  text-decoration: none;
+  color: #0a195f;
+}
+
+/* Painel azul à direita */
+.side-panel {
+  flex: 1;
+  background: radial-gradient(circle at top left, #3044a0, #0a195f);
+}

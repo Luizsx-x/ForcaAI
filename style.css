@@ -1,0 +1,862 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Niconne&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.tudo{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 400vh;
+    max-height: 100vh;
+}
+body {
+    background-color: #ffffff;
+    min-height: 100vh;
+    font-family: 'Merriweather', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Cabeçalhos ===== */
+h1 {
+    font-family: 'Merriweather', cursive;
+    font-size: 90px;
+    text-align: center;
+    color: #084494;
+    margin-bottom: 10px;
+}
+h2 {
+    font-size: 150px;
+    text-align: center;
+    color: #084494;
+}
+h3 {
+    margin-top: 0px;
+    font-size: 30px;
+    text-align: center;
+    color: #032b5c;
+}
+
+/* ===== Menu ===== */
+#menu ul {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 10px 40px;
+    width: 100%;
+    box-sizing: border-box;
+     position: fixed;
+       z-index: 9999;
+        padding: 5px 40px; 
+        overflow: HI;
+}
+#menu ul li a {
+    font-size: x-large;
+    font-family: 'Playfair Display', serif;
+    color: #084494;
+    text-decoration: none;
+}
+#menu ul li a:hover {
+    color: #006eff;
+}
+#menu {
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 12px;
+    margin-bottom: 30px;
+     margin-bottom: 0; 
+    position: fixed; 
+    top: 0;         
+    left: 0;        
+    z-index: 9999;  
+}
+#menu ul li a span {
+    font-size: 20px;
+    color: #032b5c;
+}
+
+#menu .logo img {
+    height: 500px;
+    width: auto;
+
+}.btn_advogado {
+    padding: 17px 35px;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #084494;
+    border: 1px solid #084494;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: inherit;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+.btn_advogado span {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+}
+.btn_advogado:hover {
+    animation: rotate624 0.7s ease-in-out both;
+}
+.btn_advogado:hover span {
+    animation: storm1261 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+}
+
+
+
+
+/* ===== Botão Começar ===== */
+.botao_comecar_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 300px;
+}
+.botao_comecar {
+    position: relative;
+    padding: 20px 50px;
+    border-radius: 7px;
+    border: 1px solid #499afd;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background-color: #084494;
+    color: #f9fcff;
+    overflow: hidden;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+.botao_comecar:hover {
+    background: #318eff;
+    box-shadow: 0 0 30px 5px #084494;
+}
+.botao_comecar:active {
+    box-shadow: none;
+}
+.text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Container principal ===== */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+
+/* ===== Overlay ===== */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+#overlay.abrir {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== Seção Central ===== */
+.secao-central {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    gap: 40px;
+}
+.imagem-direita {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+}
+.imagem-direita img {
+    max-width: none;
+    border-radius: 15px;
+    height: 140vh;
+    width: auto;
+    object-fit: cover;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 900px) {
+    .secao-central {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+    .imagem-direita img {
+        height: 40vh;
+    }
+    h1 {
+        font-size: 46px;
+    }
+    h2 {
+        font-size: 70px;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 5px;
+    }
+}
+@media (max-width: 480px) {
+    .secao-central {
+        padding: 10px;
+    }
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background-color:#084494;
+  color: white;
+  padding: 7rem 0 0;
+  font-family: 'Merriweather', sans-serif;
+  margin-top: 6rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 19rem;
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.footer-section {
+  margin-bottom: 1.5rem;
+}
+
+.footer-section h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-family: 'Merriweather', cursive;
+  font-weight: 700;
+}
+
+.footer-section p, .footer-section li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #006eff;
+}
+.footer-logo img {
+  margin-top: 1rem;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.footer-logo img:hover {
+  opacity: 1;
+}
+
+.social-icons, .payment-methods {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.social-icons a {
+  color: white;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #006eff;
+}
+
+.payment-methods i {
+  font-size: 1.8rem;
+  color: #006eff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+  font-size: 0.8rem;
+  margin-top: 2rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ilustra {
+   width: 100vw;       
+    height: auto;      
+    display: block;
+    margin-right: 200px;
+}
+/* PERGUNTAS FREQUENTES*/
+
+.faq-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.faq-title {
+  color: #084494;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  border-top: 1px solid #ddd;
+  padding: 20px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-item:last-child {
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  font-weight: 600;
+  color: #084494;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; 
+}
+
+.arrow {
+  position: absolute;
+  right: 10px;
+  top: 25px;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .arrow {
+  transform: rotate(180deg);
+}
+
+.arrow::before {
+  content: '⌃';
+  font-size: 16px;
+  color: #006eff;
+}
+
+/* CARROSEL*/
+.carrossel {
+    background-color: #084494;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.carrossel h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.carrossel p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+.carrossel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    width: 90%;
+}
+
+.carrossel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    flex: 0 0 280px;
+    background-color: white;
+    color: #084494;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 15px;
+    display: inline-block; 
+  margin: 0 auto;
+}
+
+/* Botões de navegação */
+.btn-seta {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #084494;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 8px 14px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.btn-seta:hover {
+    background-color: #ffffff;
+}
+
+.btn-seta.esquerda {
+    left: 10px;
+}
+
+.btn-seta.direita {
+    right: 10px;
+}
+
+/* BOTAO ADMINISTRADOR*/ 
+.animated-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #084494;
+  box-shadow: 0 0 0 2px #084494;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.animated-button span:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.animated-button span:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 5px #2195f360;
+  color: #ffffff;
+}
+
+.animated-button:active {
+  scale: 0.95;
+}
+
+.animated-button:hover span:last-child {
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+}
+
+
+/* ===== Transição de Páginas ===== */
+.fade-transition {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body.loaded {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+/* === CARD PERFIL === */
+.btn-perfil {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  border: 2px solid #084494;
+  z-index: 1000;
+}
+
+.perfil-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  display: none;
+}
+
+.perfil-card.mostrar {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translate(-50%, -45%);}
+  to {opacity: 1; transform: translate(-50%, -50%);}
+}
+
+#overlay-perfil {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  z-index: 1000;
+}
+
+#overlay-perfil.mostrar {
+  display: block;
+}
+
+.editar-perfil {
+  background-color: #084494;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.editar-perfil:hover {
+  background-color: #318eff;
+}
+
+.sair {
+  display: inline-block;
+  margin-top: 15px;
+  color: #b00020;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sair:hover {
+  text-decoration: underline;
+}
+/* ===== AJUSTE GERAL FORÇADO ===== */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+  font-size: 14px !important;
+}
+
+.tudo {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Centralização e espaçamento */
+.container, .secao-central {
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 10px !important;
+}
+
+/* ===== Cabeçalhos ===== */
+h1 {
+  font-size: clamp(28px, 5vw, 60px) !important;
+}
+h2 {
+  font-size: clamp(36px, 7vw, 90px) !important;
+}
+h3 {
+  font-size: clamp(16px, 3vw, 24px) !important;
+}
+
+
+/* ===== Imagem ===== */
+.imagem-direita img {
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 50vh !important;
+  object-fit: contain !important;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  padding: 2rem 1rem !important;
+  margin-top: 2rem !important;
+}
+.footer-section h3 {
+  font-size: 1rem !important;
+}
+.footer-section p, .footer-section li {
+  font-size: 0.85rem !important;
+}
+/* ======== SEÇÃO DO CARROSSEL ======== */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.carousel {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 40px 20px;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* ======== CARD REALMENTE GRANDE ======== */
+.card {
+    flex: 0 0 650px !important;   /* AQUI É O MONSTRO */
+    background-color: white;
+    color: #084494;
+    border-radius: 25px;
+    padding: 50px !important;
+    text-align: center;
+    scroll-snap-align: start;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.20);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ======== ÍCONES BEM GRANDES ======== */
+.card img {
+    width: 120px !important;
+    height: 120px !important;
+    margin-bottom: 25px;
+    object-fit: contain;
+}
+
+/* ======== TÍTULOS GRANDES ======== */
+.card h3 {
+    font-size: 32px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+/* ======== TEXTO DO CARD — AUMENTADO ======== */
+.card p {
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+/* ======== BOTÃO GRANDE ======== */
+.card button {
+    margin-top: 25px;
+    padding: 18px 32px;
+    background-color: #084494;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #062f6c;
+}
+
+/* ===== FAQ ===== */
+.faq-container {
+  max-width: 700px !important;
+  margin: 30px auto !important;
+}
+.faq-title {
+  font-size: 22px !important;
+}
+.faq-question {
+  font-size: 16px !important;
+}
+.faq-answer {
+  font-size: 14px !important;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  .secao-central {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  .imagem-direita img {
+    max-height: 40vh !important;
+  }
+
+  #menu ul {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .botao_comecar_wrapper {
+    margin-top: 60px !important;
+  }
+}
+/* ===== VERSÃO AJUSTADA: FULLSCREEN SEM AFETAR BOTÕES NEM FOOTER ===== */
+
+/* reset básico */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+  background: #fff !important;
+}
+
+/* garante largura total */
+.tudo,
+.container,
+.secao-central,
+.carrossel,
+.carrossel-wrapper,
+.carrossel-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+/* mantém os paddings originais do conteúdo */
+.container, .secao-central {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+/* ajusta ilustrações */
+.ilustra {
+  margin-right: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+}
+.imagem-direita img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* corrige carrossel sem grudar no footer */
+.carrossel {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 40px 0 !important;
+}
+
+/* devolve o espaçamento do footer, sem unir com o carrossel */
+.footer-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 40px 20px !important;
+  gap: 4rem !important; /* devolve espaçamento confortável */
+  background: inherit !important;
+}
+
+/* FAQ centralizado, sem estourar laterais */
+.faq-container {
+  max-width: 1100px !important;
+  margin: 40px auto !important;
+  padding: 0 20px !important;
+}
+/* Mantém botões do sistema sem quebrar botões personalizados */
+button, input[type="submit"] {
+  cursor: pointer;
+}
+
+/* NÃO sobrescreve botões personalizados */
+.btn, .botao {
+  cursor: pointer;
+}

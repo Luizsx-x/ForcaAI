@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Perfil - Cliente</title>
+  <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+   <nav id="menu"> 
+                <ul>
+                    <li class="logo">
+            <a href="index.html">
+                <img src="IMAGENS/logo sem fundo.png" alt="Logo do Site" style="height: 90px;">
+            </a>
+        </li>
+                    <li><a href="login.html" id="btn-abrir-login"><span>Login/Cadastro</span></a></li>
+                    <li><a href="advogado.html"><button class="animated-button" id="btn_advogado"><span>Advogado</span> <span></a></button></li>
+                    <li><a href="admin.html"><button class="animated-button" id="btn_advogado"><span>Administrador</span> <span></a></button></li>
+
+                </ul>
+            </nav>
+  <div class="container">
+    <div class="admin-container">
+      <h1>👤 Editar Perfil do Cliente</h1>
+      
+      <form action="backend/atualizar_cliente.php" method="POST" class="form-perfil">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" value="Maria Silva" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" value="maria@email.com" required>
+
+        <label for="telefone">Telefone</label>
+        <input type="text" id="telefone" name="telefone" value="(11) 98765-4321">
+
+        <label for="senha">Senha (deixe em branco para não alterar)</label>
+        <input type="password" id="senha" name="senha">
+
+        <button type="submit" class="btn-salvar">Salvar Alterações</button>
+      </form>
+    </div>
+  </div>
+    <script src="perfil.js"></script>
+
+</body>
+</html>

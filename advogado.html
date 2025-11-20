@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Advogado</title>
+  <link rel="stylesheet" href="advogado.css">
+</head>
+<body>
+  <div class="container">
+        <nav id="menu"> 
+      <ul>
+        <li class="logo">
+          
+          <a href="index.html">
+            <img src="IMAGENS/logo sem fundo.png" alt="Logo do Site" style="height: 90px;">
+          </a>        <li><a></a></li>
+        <li><a></a></li>
+        <li><a></a></li>
+
+                  <li><a></a></li>
+
+        </li>
+        <li><a href="login.php" id="btn-abrir-login">Login/Cadastro</a></li>
+        <li><a></a></li>
+        <li><a href="advogado.html" class="animated-button">Advogado</a></li>
+        <li><a href="admin.html" class="animated-button ativo">Administrador</a></li>
+      </ul>
+    </nav>
+
+
+  <main class="container">
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="card">
+      <h2>Resumo</h2>
+      <p>Casos ativos: 5</p>
+      <p>Próxima audiência: 12/09/2025</p>
+      <p>Notificações: 3</p>
+    </section>
+
+    <!-- CASOS -->
+    <section id="casos" class="card">
+      <h2>Gerenciamento de Casos</h2>
+      <button onclick="novoCaso()">+ Novo Caso</button>
+      <ul id="lista-casos">
+ 
+         <ul id="lista-casos">
+        <li>Processo #12345 - Andamento <button onclick="excluirCaso(this)">❌</button></li>
+        <li>Processo #67890 - Concluído <button onclick="excluirCaso(this)">❌</button></li>
+   </ul>
+    </section>
+
+    <!-- CLIENTES -->
+<section id="clientes" class="card">
+  <h2>Clientes</h2>
+  <button onclick="mostrarFormularioCliente()">+ Novo Cliente</button>
+
+  <!-- Formulário oculto -->
+  <form id="form-cliente" style="display:none; margin-top:1rem;">
+    <label>
+      Nome: <input type="text" id="nomeCliente" required>
+    </label><br><br>
+    <label>
+      Caso: <input type="text" id="casoCliente" required>
+    </label><br><br>
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <!-- Lista de clientes -->
+  <ul id="lista-clientes">
+  
+  </ul>
+</section>
+
+    
+        
+
+ <!-- AGENDA -->
+<section id="agenda" class="card">
+  <h2>Agenda</h2>
+  
+  <button onclick="mostrarFormularioAgenda()">+ Novo Compromisso</button>
+    <form id="form-agenda" style="display:none; margin-top:1rem;">
+    <label>
+      Data: <input type="date" id="dataCompromisso" required>
+    </label><br><br>
+    <label>
+      Descrição: <input type="text" id="descricaoCompromisso" required>
+    </label><br><br>
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <!-- Formulário oculto -->
+  <form id="form-agenda" style="display:none; margin-top:1rem;">
+    <label>
+      Data: <input type="date" id="dataCompromisso" required>
+    </label><br><br>
+    <label>
+      Descrição: <input type="text" id="descricaoCompromisso" required>
+    </label><br><br>
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <!-- Lista de compromissos -->
+  <ul id="lista-agenda">
+    <li>📅 12/09 - Audiência Maria Silva <button onclick="excluirAgenda(this)">❌</button></li>
+    <li>📅 15/09 - Reunião João Pereira <button onclick="excluirAgenda(this)">❌</button></li>
+  </ul>
+</section>
+
+
+    <!-- DOCUMENTOS -->
+    <section id="documentos" class="card">
+      <h2>Documentos</h2>
+      <input type="file">
+      <ul>
+        <li>📄 Petição Inicial - Maria Silva.pdf</li>
+      </ul>
+    </section>
+
+    <!-- CONFIGURAÇÕES -->
+    <section id="configuracoes" class="card">
+      <h2>Configurações</h2>
+      <p><button>Alterar Senha</button></p>
+      <p><button>Sair</button></p>
+    </section>
+  </main>
+ 
+ 
+
+  <script src="painel.js"></script>
+
+   
+</body>
+</html>
+
+
+
